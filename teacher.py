@@ -29,15 +29,18 @@ def capData() :
                 last_page_link = l["href"]
                 
 
-        for i in index_soup:
-            r = requests.get("https://www.ptt.cc"+i["href"])
-            
-            soup = BeautifulSoup(r.text,"html.parser")
-            #print(soup)
-            article_soup = soup.select("div#main-content")
+        try:
+            for i in index_soup:
+                r = requests.get("https://www.ptt.cc"+i["href"])
+                
+                soup = BeautifulSoup(r.text,"html.parser")
+                #print(soup)
+                article_soup = soup.select("div#main-content")
 
-            article.append({ "html" : str(article_soup), "link" : i["href"] })
-            #print(article_soup)
+                article.append({ "html" : str(article_soup), "link" : i["href"] })
+                #print(article_soup)
+        except:
+            print("hi")
 
 
         r = requests.get("https://www.ptt.cc"+last_page_link)
@@ -48,9 +51,9 @@ def capData() :
 def saveToDB() :
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
-    mydb = myclient["愛愛"]
+    mydb = myclient["愛愛"] #雲端資料夾
 
-    mycol = mydb["mobel"]
+    mycol = mydb["mobel"] #雲端資料夾內名稱
     
     mycol.insert_many(article)
 
