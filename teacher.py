@@ -49,7 +49,7 @@ def capData() :
         #print(len(article_link))
 
 def saveToDB() :
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/") #本地端
 
     mydb = myclient["愛愛"] #雲端資料夾
 
