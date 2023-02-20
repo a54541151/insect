@@ -1,9 +1,9 @@
 import jieba
 
 strs=["我来到北京清华大学","乒乓球拍卖完了","中国科学技术大学"]
-for str in strs:
-    seg_list = jieba.cut(str,use_paddle=True) # 使用paddle模式
-    print("Paddle Mode: " + '/'.join(list(seg_list)))
+# for str in strs:
+#     seg_list = jieba.cut(str,use_paddle=True) # 使用paddle模式
+#     print("Paddle Mode: " + '/'.join(list(seg_list)))
 
 seg_list = jieba.cut("我来到北京清华大学", cut_all=True)
 print("Full Mode: " + "/ ".join(seg_list))  # 全模式

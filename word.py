@@ -30,7 +30,7 @@ def cut():
 
 
 def getFromDB() :
-    myclient = pymongo.MongoClient("mongodb+srv://jasonyaya:jasonyaya@cluster0.rjbp5vy.mongodb.net")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
     mydb = myclient["愛愛"]
 
@@ -40,7 +40,7 @@ def getFromDB() :
         articles.append(x)
 
 def saveToDB() :
-    myclient = pymongo.MongoClient("mongodb+srv://jasonyaya:jasonyaya@cluster0.rjbp5vy.mongodb.net")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
     mydb = myclient["愛愛"] #雲端資料夾
 
