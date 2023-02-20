@@ -26,7 +26,7 @@ def cut():
 
         tfidf_list = jieba.analyse.extract_tags(a["content"], topK=20, withWeight=True, allowPOS=())
 
-        #print(tfidf_list)
+        print(tfidf_list)
 
 
 def getFromDB() :
@@ -56,7 +56,7 @@ def main() :
     loadNewWordToJeiba()
     getFromDB()
     cut()
-    saveToDB()
+    # saveToDB()
     
 if __name__ == '__main__':
     main()
