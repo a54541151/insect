@@ -13,7 +13,7 @@ else :
     time = int(sys.argv[1])
 
 def capData() :
-    r = requests.get("https://www.ptt.cc/bbs/car/index.html")
+    r = requests.get("https://www.ptt.cc/bbs/joke/index.html")
     
     global time
     while time > 0:
