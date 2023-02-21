@@ -44,7 +44,7 @@ def saveToDB() :
 
     mydb = myclient["愛愛"] #雲端資料夾
 
-    mycol = mydb["哥哥我要你的愛"] #雲端資料夾內名稱
+    mycol = mydb["哥哥要你的愛"] #雲端資料夾內名稱
     
     mycol.insert_many(article)
 
