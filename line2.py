@@ -21,8 +21,10 @@ CHANNEL_SECRECT = os.environ["CHANNEL_SECRECT"]
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(CHANNEL_SECRECT)
+line_bot_api = LineBotApi('40arE0O50T4TfiFBif5CsDljPDebfLQjvsXiwHYm4+f1gx7Igha95IMY50eqV2850sFBE2w3xvx/gT0rzHCs2prZlHV9DKpzRYhue7oQT4EJtSNT4lGpG1JjPkjonjwZmP2ElpIFhVgmL5AnuqofVQdB04t89/1O/w1cDnyilFU=')
+#Channel access token
+handler = WebhookHandler('df7e636961ed250bd0a818031433f926')
+#Channel secret
 
 
 @app.route("/callback", methods=['POST'])
@@ -50,9 +52,9 @@ def handle_message(event):
     
     myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
-    mydb = myclient["ptt"]
+    mydb = myclient["愛愛"]
 
-    mycol = mydb["mobel"]
+    mycol = mydb["要愛愛"]
 
     x = event.message.text.split(" ")
 
@@ -66,12 +68,15 @@ def handle_message(event):
         print(match["title"])
         article.append(match)
         text = text + '\n'+ str(n) + ' : ' + match["title"] + '\n' + match["link"]
-        #n += 1
+        n += 1
 
+
+    if len(text) == 0:
+        text="什麼都沒有"
 
     line_bot_api.reply_message(
     event.reply_token,
-    TextSendMessage(text=text),
+    TextMessage(text=text),
     )
 
 if __name__ == "__main__":

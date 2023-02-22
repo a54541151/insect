@@ -81,11 +81,11 @@ def capData() :
         #print(len(article_link))
 
 def saveToDB() :
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    myclient = pymongo.MongoClient("mongodb+srv://jasonyaya:jasonyaya@cluster0.rjbp5vy.mongodb.net")
 
     mydb = myclient["愛愛"]
 
-    mycol = mydb["要愛愛"]
+    mycol = mydb["哥哥要你的愛"]
     
     mycol.drop()
 
