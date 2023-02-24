@@ -14,7 +14,7 @@ else :
     time = int(sys.argv[1])
 
 def capData() :
-    r = requests.get("https://www.ptt.cc/bbs/joke/index.html")
+    r = requests.get("https://www.ptt.cc/bbs/marvel/index.html")
     
     global time
     while time > 0:
@@ -81,11 +81,11 @@ def capData() :
         #print(len(article_link))
 
 def saveToDB() :
-    myclient = pymongo.MongoClient("mongodb+srv://jasonyaya:jasonyaya@cluster0.rjbp5vy.mongodb.net")
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 
-    mydb = myclient["愛愛"]
+    mydb = myclient["鬼怪"]
 
-    mycol = mydb["哥哥要你的愛"]
+    mycol = mydb["鬼怪愛愛"]
     
     mycol.drop()
 
