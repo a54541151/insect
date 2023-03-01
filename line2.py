@@ -21,9 +21,9 @@ CHANNEL_SECRECT = os.environ["CHANNEL_SECRECT"]
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('40arE0O50T4TfiFBif5CsDljPDebfLQjvsXiwHYm4+f1gx7Igha95IMY50eqV2850sFBE2w3xvx/gT0rzHCs2prZlHV9DKpzRYhue7oQT4EJtSNT4lGpG1JjPkjonjwZmP2ElpIFhVgmL5AnuqofVQdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 #Channel access token
-handler = WebhookHandler('df7e636961ed250bd0a818031433f926')
+handler = WebhookHandler(CHANNEL_SECRECT)
 #Channel secret
 
 
