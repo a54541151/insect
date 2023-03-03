@@ -94,8 +94,6 @@ def handle_message(event):
 
     myquery = { "tfidf": { "$in": targets } }
 
-    # print (targets)
-
     n = 0
     for match in mycol.find(myquery) :
         print(match["title"])
@@ -110,9 +108,9 @@ def handle_message(event):
     n = 0
     while n < len(targets) :
         if n + 1 != len(targets) :
-            try_to_find = try_to_find + target + ", "
+            try_to_find = try_to_find + targets[n] + ", "
         else :
-            try_to_find = try_to_find + target
+            try_to_find = try_to_find + targets[n]
         n += 1
 
     relpy_text = "嘗試幫你找有關{" + try_to_find + "}的文章,結果如下\n\n" + relpy_text
